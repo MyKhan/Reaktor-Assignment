@@ -1,0 +1,53 @@
+html {
+    background: #f4f4f4;
+}
+
+h1{
+    background:#333; 
+    color:#fff; 
+    padding:20px; 
+    text-align: center;
+    width: 90%;
+    margin: auto;
+}
+
+body div {
+//    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
+.hide{
+    display: none;
+}
+
+.show-block{
+    display: block;
+}
+
+#btn_show-add-obs-section {
+    display: block;
+    margin: auto;
+}
+
+select#place {
+    width: 50%;
+    margin-right: 1em;
+}
+
+input#observation {
+    width: 20%;
+}
+
+#btn-submit_obs {
+    display: block;
+    margin: 10px 0px 0px 20px;
+}
+
+#add-obs {
+    display: none;
+}
+
+#add-obs_form {
+    
+}
