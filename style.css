@@ -11,10 +11,15 @@ h1{
     margin: auto;
 }
 
-body div {
+/* body div {
 //    border: 1px solid black;
     padding: 5px;
     margin: 5px;
+} */
+
+
+table tr label {
+  font-size: 20px;
 }
 
 .hide{
@@ -48,6 +53,6 @@ input#observation {
     display: none;
 }
 
-#add-obs_form {
+/* #add-obs_form {
     
-}
+} */
