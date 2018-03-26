@@ -1,151 +1,160 @@
 <!DOCTYPE>
 <html lang="en">
-   <head>
-      <title>Assignment</title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-         crossorigin="anonymous">
-      <link rel="stylesheet" type="text/css" href="style.css">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   </head>
+
+<head>
+    <title>Assignment</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
 
 
-   <body>
-      <div class="container-fluid">
-         <div class="row">
+<body>
+    <div class="container-fluid">
+        <div class="row">
             <div class="col-lg-12">
-               <h1>Weather App</h1>
+                <h1>Weather App</h1>
             </div>
-         </div>
+        </div>
 
 
-         <div class="row">
+        <div class="row after-div_margin">
             <div class="col-xs-12 col-sm-12 col-md-10 col mx-auto">
-               <h3>Current Temperatures: </h3>
-               <div id="canvas=container">
-                  <canvas id="temperature-chart">
-               </div>
+                <h3>Current Temperatures: </h3>
+                <div id="canvas-container">
+                    <canvas id="temperature-chart">
+                </div>
             </div>
-         </div>
+        </div>
 
 
-         <div class="row">
+        <div class="row after-div_margin">
             <div class="col-xs-12 col-sm-12 col-md-10 mx-auto">
-               <h3>Highs And Lows: </h3>
-               <div class="col-xs-3">
-                  <table class="table-hover">
-                     <label>Helsinki</label>
-                     <tr>
-                        <th>High</th>
-                        <td>10</td>
-                     </tr>
-                     <tr>
-                        <th>Low</th>
-                        <td>0</td>
-                     </tr>
-                  </table>
-               </div>
-               <div class="col-xs-3">
-                  <table class="table-hover">
-                     <tr>
-                        <label>Tokyo</label>
-                        <th>High</th>
-                        <td>10</td>
-                     </tr>
-                     <tr>
-                        <th>Low</th>
-                        <td>0</td>
-                     </tr>
-                  </table>
-               </div>
-               <div class="col-xs-3">
-                  <table class="table-hover">
-                     <tr>
-                        <label>Dubai</label>
-                        <th>High</th>
-                        <td>10</td>
-                     </tr>
-                     <tr>
-                        <th>Low</th>
-                        <td>0</td>
-                     </tr>
-                  </table>
-               </div>
-               <div class="col-xs-3">
-                  <table class="table-hover">
-                     <tr>
-                        <label>New York</label>
-                        <th>High</th>
-                        <td>10</td>
-                     </tr>
-                     <tr>
-                        <th>Low</th>
-                        <td>0</td>
-                     </tr>
-                  </table>
-               </div>
-               <div class="col-xs-3">
-                  <table class="table-hover">
-                     <tr>
-                        <label>Amsterdam</label>
-                        <th>High</th>
-                        <td>10</td>
-                     </tr>
-                     <tr>
-                        <th>Low</th>
-                        <td>0</td>
-                     </tr>
-                  </table>
-               </div>
+                <h3>Highs And Lows: </h3>
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4">
+                        <table class="table table-hover">
+                            <caption>Helsinki</caption>
+                            <tr>
+                                <th>High</th>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <th>Low</th>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-4 col-sm-4">
+                        <table class="table table-hover">
+                            <tr>
+                                <caption>Tokyo</caption>
+                                <th>High</th>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <th>Low</th>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-4 col-sm-4">
+                        <table class="table table-hover">
+                            <tr>
+                                <caption>Dubai</caption>
+                                <th>High</th>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <th>Low</th>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6">
+                        <table class="table table-hover">
+                            <tr>
+                                <caption>New York</caption>
+                                <th>High</th>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <th>Low</th>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-6 col-sm-6">
+                        <table class="table table-hover">
+                            <tr class="center-text">
+                                <caption>Amsterdam</caption>
+                                <th>High</th>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <th>Low</th>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
-         </div>
+        </div>
 
 
-         <hr />
+        <!-- <hr /> -->
 
 
-         <button class="btn btn-info" id="btn_show-add-obs-section">
-         Add An Observation</button>
-         <div class="row" id="add-obs">
+        <button class="btn btn-info" id="btn_show-add-obs-section">
+            Add An Observation</button>
+        <div class="row after-div_margin" id="add-obs">
             <div class="col-xs-12 col-sm-12 col-md-10 mx-auto">
-               <h3>Add An Observation</h3>
-               <form id="add-obs_form">
-                  <label>Location</label>
-                  <select id="place" name="location">
-                     <option value="tokyo">Tokyo</option>
-                     <option value="helsinki">Helsinki</option>
-                     <option value="newyork">New York</option>
-                     <option value="amsterdam">Amsterdam</option>
-                     <option value="dubai">Dubai</option>
-                  </select>
-                  <label>Observation: </label>
-                  <input type="number" id="observation" placeholder="observation" min="-70" max="60" required>
-                  <br />
-                  <input id="btn-submit_obs" type="submit" value="Submit">
-               </form>
+                <h3>Add An Observation</h3>
+                <form id="add-obs_form">
+                    <label>Location</label>
+                    <select id="place" name="location">
+                        <option value="tokyo">Tokyo</option>
+                        <option value="helsinki">Helsinki</option>
+                        <option value="newyork">New York</option>
+                        <option value="amsterdam">Amsterdam</option>
+                        <option value="dubai">Dubai</option>
+                    </select>
+                    <label>Observation: </label>
+                    <input type="number" id="observation" placeholder="observation" min="-70" max="60" required>
+                    <br />
+                    <input id="btn-submit_obs" type="submit" value="Submit">
+                </form>
             </div>
-         </div>
+        </div>
 
 
 
-         <div class="row">
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-10 mx-auto">
-               <h3>Recorded Observations: </h3>
-               <p id="observations"></p>
+                <h3>Recorded Observations: </h3>
+                <div class="col-xs-4 col-sm-4">
+                    <table id="observations" class="table table-striped">
+                        <caption>Helsinki</caption>
+                    </table>
+                </div>
             </div>
-         </div>
-      </div>
+        </div>
+    </div>
 
 
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-         crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-         crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-         crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
-      <script src="interactivity.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <script src="interactivity.js"></script>
 
 
-   </body>
+</body>
+
 </html>
-

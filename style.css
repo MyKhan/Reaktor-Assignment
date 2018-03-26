@@ -17,10 +17,24 @@ h1{
     margin: 5px;
 } */
 
-
-table tr label {
-  font-size: 20px;
+.after-div_margin {
+    margin-bottom: 50px;
 }
+
+#canvas-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.table caption {
+    color: black;
+    text-align: center;
+    caption-side: top;
+}
+
+ .table td {
+    text-align: center;   
+ }
 
 .hide{
     display: none;

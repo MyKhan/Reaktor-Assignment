@@ -38,21 +38,22 @@
 //   });
 //   document.getElementById('observations').innerHTML = text + "<br>";
 // })();
-// var recObsOfHelsinki = [10, 5, 8, 9, 10, 6];
-// var recObsOfTokyo = [10, 15, 18, 19, 20, 6];
+
+
+var recObsOfHelsinki = [10, 5, 8, 9, 10, 6];
+var recObsOfTokyo = [10, 15, 18, 19, 20, 6];
 // var recObsOfDubai = [30, 25, 28, 29, 30, 26];
 // var recObsOfNewYork = [0, -5, 8, -9, -10, -6];
 // var recObsOfAmsterdam = [15, 15, 18, 19, 10, 16];
-// (function allObservations() {
-//   var text = "";
-//   var observations = document.getElementById("observations");
-//   alert(observations);
-//   recObsOfHelsinki.forEach(function (temperature) {
-//     text += temperature + "<br >";
-//   });
-//   alert(text);
-//   observations.innerHTML = text;
-// })();
+(function allObservations() {
+  var text = "";
+  var observations = document.getElementById("observations");
+  recObsOfHelsinki.forEach(function (temperature) {
+    text += "<tr><td>" + temperature + "</td></tr>";
+  });
+  
+  $(observations).append(text);
+})();
 
 
 
@@ -147,12 +148,6 @@ function showHighsAndLows() {
         button.innerHTML = "Are You Done?";
     }
 };
-
-// $(document).ready(function () {
-//   $('#btn_show-add-obs-section').click(function () {
-//     $('#add-obs').toggle();
-//   });
-// });
 
 /*
     $("#checking").load("api.openweathermap.org/data/2.5/weather?lat=35&lon=139", function(responseTxt, statusTxt, xhr){
