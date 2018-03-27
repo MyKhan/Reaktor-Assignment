@@ -18,7 +18,7 @@ h1{
 } */
 
 .after-div_margin {
-    margin-bottom: 50px;
+    margin-bottom: 50px !important;
 }
 
 #canvas-container {
@@ -67,6 +67,6 @@ input#observation {
     display: none;
 }
 
-/* #add-obs_form {
-    
-} */
+.th-centered {
+    text-align: center !important;
+}

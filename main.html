@@ -108,7 +108,7 @@
         <!-- <hr /> -->
 
 
-        <button class="btn btn-info" id="btn_show-add-obs-section">
+        <button class="btn btn-info after-div_margin" id="btn_show-add-obs-section">
             Add An Observation</button>
         <div class="row after-div_margin" id="add-obs">
             <div class="col-xs-12 col-sm-12 col-md-10 mx-auto">
@@ -135,10 +135,49 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-10 mx-auto">
                 <h3>Recorded Observations: </h3>
-                <div class="col-xs-4 col-sm-4">
-                    <table id="observations" class="table table-striped">
-                        <caption>Helsinki</caption>
-                    </table>
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4">
+                        <table id="table_helsinki-past-observations" class="table table-striped th-centered">
+                            <caption>Helsinki</caption>
+                            <tr>
+                                <th>Temperature (in &deg;C)</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-4 col-sm-4">
+                        <table id="table_tokyo-past-observations" class="table table-striped th-centered">
+                            <caption>Tokyo</caption>
+                            <tr>
+                                <th>Temperature (in &deg;C)</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-4 col-sm-4">
+                        <table id="table_dubai-past-observations" class="table table-striped th-centered">
+                            <caption>Dubai</caption>
+                            <tr>
+                                <th>Temperature (in &deg;C)</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6 col-sm-6">
+                        <table id="table_newyork-past-observations" class="table table-striped th-centered">
+                            <caption>New York</caption>
+                            <tr>
+                                <th>Temperature (in &deg;C)</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="col-xs-6 col-sm-6">
+                        <table id="table_amsterdam-past-observations" class="table table-striped th-centered">
+                            <caption>Amsterdam</caption>
+                            <tr>
+                                <th>Temperature (in &deg;C)</th>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

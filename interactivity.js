@@ -1,133 +1,83 @@
-// var recObs = [{ "Helsinki": 10 },
-// { "Helsinki": 18 },
-// { "Helsinki": 8 },
-// { "Helsinki": 0 },
-// { "Helsinki": -2 },
-// { "Helsinki": 8 },
-// { "Tokyo": 10 },
-// { "Tokyo": 18 },
-// { "Tokyo": 8 },
-// { "Tokyo": 0 },
-// { "Tokyo": -2 },
-// { "Tokyo": 8 },
-// { "Dubai": 10 },
-// { "Dubai": 30 },
-// { "Dubai": 20 },
-// { "Dubai": 10 },
-// { "Dubai": 30 },
-// { "New York": 10 },
-// { "New York": 18 },
-// { "New York": 8 },
-// { "New York": 0 },
-// { "New York": -2 },
-// { "New York": 8 },
-// { "Amsterdam": 10 },
-// { "Amsterdam": 18 },
-// { "Amsterdam": 8 },
-// { "Amsterdam": 0 },
-// { "Amsterdam": -2 },
-// { "Amsterdam": 8 }
-// ];
-
-
-// (function allObservations() {
-//   var text = "";
-//   recObs.forEach(function (arrayItem) {
-//     var x = JSON.stringify(arrayItem);
-//     text += x + "<br >";
-//   });
-//   document.getElementById('observations').innerHTML = text + "<br>";
-// })();
-
-
 var recObsOfHelsinki = [10, 5, 8, 9, 10, 6];
 var recObsOfTokyo = [10, 15, 18, 19, 20, 6];
-// var recObsOfDubai = [30, 25, 28, 29, 30, 26];
-// var recObsOfNewYork = [0, -5, 8, -9, -10, -6];
-// var recObsOfAmsterdam = [15, 15, 18, 19, 10, 16];
+var recObsOfDubai = [30, 25, 28, 29, 30, 26];
+var recObsOfNewYork = [0, -5, 8, -9, -10, -6];
+var recObsOfAmsterdam = [15, 15, 18, 19, 10, 16];
+
+
+
+
+
+function iterateOverAndShowTemperatures(appendingText, arrayOfTemps, idOfTable) {
+    var observations = document.getElementById(idOfTable);
+    arrayOfTemps.forEach(function (temperature) {
+        appendingText += "<tr><td>" + temperature + "</td></tr>";
+    })
+    $(observations).append(appendingText);
+}
+
+function maxTemperature(arrayOfTemps) {
+    var max = -Infinity;
+    for (var i = 0; i < arrayOfTemps.length; i++) {
+        if (arrayOfTemps[i] > max)
+            max = arrayOfTemps[i];
+    }
+    return max;
+}
+
+function latestTemperature(arrayOfTemps) {
+    var temp;
+    // temp = arrayOfTemps[arrayOfTemps.length - 1];
+    temp = arrayOfTemps.slice(-1)[0];
+    return temp;
+}
+
+
 (function allObservations() {
-  var text = "";
-  var observations = document.getElementById("observations");
-  recObsOfHelsinki.forEach(function (temperature) {
-    text += "<tr><td>" + temperature + "</td></tr>";
-  });
-  
-  $(observations).append(text);
+    var helsinkiTemps = "";
+    var tokyoTemps = "";
+    var dubaiTemps = "";
+    var newyorkTemps = "";
+    var amsterdamTemps = "";
+    iterateOverAndShowTemperatures(helsinkiTemps, recObsOfHelsinki, "table_helsinki-past-observations");
+    iterateOverAndShowTemperatures(tokyoTemps, recObsOfTokyo, "table_tokyo-past-observations");
+    iterateOverAndShowTemperatures(dubaiTemps, recObsOfDubai, "table_dubai-past-observations");
+    iterateOverAndShowTemperatures(newyorkTemps, recObsOfNewYork, "table_newyork-past-observations");
+    iterateOverAndShowTemperatures(amsterdamTemps, recObsOfAmsterdam, "table_amsterdam-past-observations");
 })();
 
 
-
-
- var ctx = document.getElementById("temperature-chart").getContext("2d");
- Chart.defaults.global.defaultFontFamily = "Lato";
- Chart.defaults.global.defaultFontSize = 18;
- var myChart = new Chart(ctx, {
-   type: "line",
-   data: {
-     labels: ["Helsinki", "Tokyo", "Dubai", "New York", "Amsterdam"],
-     datasets: [
-       {
-         label: "Current Temperature (in " + String.fromCharCode(176) + "C)",
-         data: [0, 10, 30, -10, 5],
-         borderColor: "blue",
-         backgroundColor: "rgba(0, 0, 0, 0)",
-         pointHoverBorderColor: "black",
-         pointHoverRadius: 5,
-         pointHoverBorderWidth: 5
-       }
-     ]
-   },
-   options: {
-     scales: {
-       yAxes: [
-         {
-           ticks: {
-             beginAtZero: false
-           }
-         }
-       ]
-     }
-   }
- });
-
-
-
-/*
-  var myChart = new Chart(ctx, {
-      type: 'line',
-      data: {
-          datasets: [{
-              data: [20, 50, 100, 75, 25, 0],
-              label: 'Left dataset',
-              // This binds the dataset to the left y axis
-              yAxisID: 'left-y-axis'
-          }, {
-              data: [0.1, 0.5, 1.0, 2.0, 1.5, 0],
-              label: 'Right dataset',
-              // This binds the dataset to the right y axis
-              yAxisID: 'right-y-axis',
-          }],
-          labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun']
-      },
-      options: {
-          scales: {
-              yAxes: [{
-                  id: 'left-y-axis',
-                  type: 'linear',
-                  position: 'left'
-              }, {
-                  id: 'right-y-axis',
-                  type: 'linear',
-                  position: 'right'
-              }]
-          }
-      }
-  });
-
-
-
-  */
-
+var ctx = document.getElementById("temperature-chart").getContext("2d");
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 18;
+var myChart = new Chart(ctx, {
+    type: "line",
+    data: {
+        labels: ["Helsinki", "Tokyo", "Dubai", "New York", "Amsterdam"],
+        datasets: [
+            {
+                label: "Current Temperature (in " + String.fromCharCode(176) + "C)",
+                data: [latestTemperature(recObsOfHelsinki), latestTemperature(recObsOfTokyo), latestTemperature(recObsOfDubai), latestTemperature(recObsOfNewYork), latestTemperature(recObsOfAmsterdam)],
+                borderColor: "blue",
+                backgroundColor: "rgba(0, 0, 0, 0)",
+                pointHoverBorderColor: "black",
+                pointHoverRadius: 5,
+                pointHoverBorderWidth: 5
+            }
+        ]
+    },
+    options: {
+        scales: {
+            yAxes: [
+                {
+                    ticks: {
+                        beginAtZero: false
+                    }
+                }
+            ]
+        }
+    }
+});
 
 
 var button = document.getElementById("btn_show-add-obs-section");
@@ -137,12 +87,12 @@ function showHighsAndLows() {
     var addObs = document.getElementById("add-obs");
     var displaySetting = addObs.style.display;
     if (displaySetting == "block") {
-        window.setTimeout(function() {
+        window.setTimeout(function () {
             addObs.style.display = "none";
         }, 10);
         button.innerHTML = "Add An Observation";
     } else {
-        window.setTimeout(function() {
+        window.setTimeout(function () {
             addObs.style.display = "block";
         }, 10);
         button.innerHTML = "Are You Done?";
