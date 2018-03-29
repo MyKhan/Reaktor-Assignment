@@ -1,11 +1,20 @@
-var recObsOfHelsinki = [10, 5, 8, 9, 10, 6];
+var recObsOfHelsinki = [10, 5, 8, 9, 10, -6];
 var recObsOfTokyo = [10, 15, 18, 19, 20, 6];
 var recObsOfDubai = [30, 25, 28, 29, 30, 26];
 var recObsOfNewYork = [0, -5, 8, -9, -10, -6];
 var recObsOfAmsterdam = [15, 15, 18, 19, 10, 16];
 
 
-
+function highsAndLows(arrayOfTemps, idOfTable) {
+    var max = maxTemperature(arrayOfTemps);
+    var min = minTemperature(arrayOfTemps);
+    var table = document.getElementById(idOfTable);
+    // alert(max);
+    // alert(min);
+    // alert(table);
+    table.rows[0].cells[1].innerHTML = max;
+    table.rows[1].cells[1].innerHTML = min;
+}
 
 
 function iterateOverAndShowTemperatures(appendingText, arrayOfTemps, idOfTable) {
@@ -25,6 +34,15 @@ function maxTemperature(arrayOfTemps) {
     return max;
 }
 
+function minTemperature(arrayOfTemps) {
+    var min = Infinity;
+    for (var i = 0; i < arrayOfTemps.length; i++) {
+        if (arrayOfTemps[i] < min)
+            min = arrayOfTemps[i];
+    }
+    return min;
+}
+
 function latestTemperature(arrayOfTemps) {
     var temp;
     // temp = arrayOfTemps[arrayOfTemps.length - 1];
@@ -32,8 +50,15 @@ function latestTemperature(arrayOfTemps) {
     return temp;
 }
 
+var updateShowHighAndLowTemperatures = (function showHighAndLowTemperatures() {
+    highsAndLows(recObsOfHelsinki, "table-helsinki_high-and-low");
+    highsAndLows(recObsOfTokyo, "table-tokyo_high-and-low");
+    highsAndLows(recObsOfDubai, "table-dubai_high-and-low");
+    highsAndLows(recObsOfNewYork, "table-newyork_high-and-low");
+    highsAndLows(recObsOfAmsterdam, "table-amsterdam_high-and-low");
+})();
 
-(function allObservations() {
+var updateAllObservations = (function allObservations() {
     var helsinkiTemps = "";
     var tokyoTemps = "";
     var dubaiTemps = "";
@@ -80,24 +105,102 @@ var myChart = new Chart(ctx, {
 });
 
 
-var button = document.getElementById("btn_show-add-obs-section");
-button.addEventListener("click", showHighsAndLows);
+var buttonToggleAddObsSection = document.getElementById("btn_show-add-obs-section");
+buttonToggleAddObsSection.addEventListener("click", showAddObservationSection);
 
-function showHighsAndLows() {
+function showAddObservationSection() {
     var addObs = document.getElementById("add-obs");
     var displaySetting = addObs.style.display;
     if (displaySetting == "block") {
         window.setTimeout(function () {
             addObs.style.display = "none";
         }, 10);
-        button.innerHTML = "Add An Observation";
+        buttonToggleAddObsSection.innerHTML = "Add An Observation";
     } else {
         window.setTimeout(function () {
             addObs.style.display = "block";
         }, 10);
-        button.innerHTML = "Are You Done?";
+        document.getElementById("observation").required = false;
+        buttonToggleAddObsSection.innerHTML = "Are You Done?";
     }
 };
+
+
+var submitButton = document.getElementById('btn-submit_obs');
+submitButton.addEventListener("click", submitFormData);
+
+function submitFormData(e) {
+    if (!document.getElementById("observation").value) {
+        alert('Enter Observation');
+    }
+    else {
+        // var serialized = $('form').serializeArray();
+        // var serializedText = JSON.stringify(serialized);
+        // alert(serializedText);
+
+        var placeInputValue = document.getElementById("place").value;
+        var observationInputValue = document.getElementById("observation").value;
+        switch (placeInputValue) {
+            case "helsinki":
+                recObsOfHelsinki.push(observationInputValue);
+                // alert(recObsOfHelsinki);
+                myChart.data.datasets[0].data[0] = latestTemperature(recObsOfHelsinki);
+                myChart.update();
+                break;
+            case "tokyo":
+                recObsOfTokyo.push(observationInputValue);
+                // alert(recObsOfTokyo);
+                // updateShowHighAndLowTemperatures();
+                // updateAllObservations();
+                myChart.data.datasets[0].data[1] = latestTemperature(recObsOfTokyo);
+                myChart.update();
+                break;
+            case "dubai":
+                recObsOfDubai.push(observationInputValue);
+                // alert(recObsOfDubai);
+                myChart.data.datasets[0].data[2] = latestTemperature(recObsOfDubai);
+                myChart.update();
+                break;
+            case "newyork":
+                recObsOfNewYork.push(observationInputValue);
+                // alert(recObsOfNewYork);
+                myChart.data.datasets[0].data[3] = latestTemperature(recObsOfNewYork);
+                myChart.update();
+                break;
+            case "amsterdam":
+                recObsOfAmsterdam.push(observationInputValue);
+                // alert(recObsOfAmsterdam);
+                myChart.data.datasets[0].data[4] = latestTemperature(recObsOfAmsterdam);
+                myChart.update();
+                break;
+            default:
+                break;
+        }
+        document.getElementById('place').selectedIndex = 0;
+        document.getElementById("observation").value = "";
+        // showHighAndLowTemperatures;
+
+        //check invalidity of input field
+        $("#observation").blur(function () {
+            if (!this.value) {
+                document.getElementById('observation').required = true;
+            }
+        });
+        // $(".btn-submit_obs").click(function (event){
+        //     $("#observation").addClass('is-invalid');
+        //     $("#observation").prop('required', true);
+        // });
+
+        var addObs = document.getElementById("add-obs");
+        var displaySetting = addObs.style.display;
+        window.setTimeout(function () {
+            addObs.style.display = "none";
+        }, 10);
+        buttonToggleAddObsSection.innerHTML = "Add An Observation";
+    }
+}
+
+
 
 /*
     $("#checking").load("api.openweathermap.org/data/2.5/weather?lat=35&lon=139", function(responseTxt, statusTxt, xhr){

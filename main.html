@@ -34,7 +34,7 @@
                 <h3>Highs And Lows: </h3>
                 <div class="row">
                     <div class="col-xs-4 col-sm-4">
-                        <table class="table table-hover">
+                        <table id="table-helsinki_high-and-low" class="table table-hover">
                             <caption>Helsinki</caption>
                             <tr>
                                 <th>High</th>
@@ -47,9 +47,9 @@
                         </table>
                     </div>
                     <div class="col-xs-4 col-sm-4">
-                        <table class="table table-hover">
+                        <table id="table-tokyo_high-and-low" class="table table-hover">
+                            <caption>Tokyo</caption>
                             <tr>
-                                <caption>Tokyo</caption>
                                 <th>High</th>
                                 <td>10</td>
                             </tr>
@@ -60,9 +60,9 @@
                         </table>
                     </div>
                     <div class="col-xs-4 col-sm-4">
-                        <table class="table table-hover">
+                        <table id="table-dubai_high-and-low" class="table table-hover">
+                            <caption>Dubai</caption>
                             <tr>
-                                <caption>Dubai</caption>
                                 <th>High</th>
                                 <td>10</td>
                             </tr>
@@ -75,9 +75,9 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-6 col-sm-6">
-                        <table class="table table-hover">
+                        <table id="table-newyork_high-and-low" class="table table-hover">
+                            <caption>New York</caption>
                             <tr>
-                                <caption>New York</caption>
                                 <th>High</th>
                                 <td>10</td>
                             </tr>
@@ -88,9 +88,9 @@
                         </table>
                     </div>
                     <div class="col-xs-6 col-sm-6">
-                        <table class="table table-hover">
+                        <table id="table-amsterdam_high-and-low" class="table table-hover">
+                            <caption>Amsterdam</caption>
                             <tr class="center-text">
-                                <caption>Amsterdam</caption>
                                 <th>High</th>
                                 <td>10</td>
                             </tr>
@@ -113,7 +113,7 @@
         <div class="row after-div_margin" id="add-obs">
             <div class="col-xs-12 col-sm-12 col-md-10 mx-auto">
                 <h3>Add An Observation</h3>
-                <form id="add-obs_form">
+                <!-- <form id="add-obs_form"> -->
                     <label>Location</label>
                     <select id="place" name="location">
                         <option value="tokyo">Tokyo</option>
@@ -123,10 +123,11 @@
                         <option value="dubai">Dubai</option>
                     </select>
                     <label>Observation: </label>
-                    <input type="number" id="observation" placeholder="observation" min="-70" max="60" required>
+                    <input type="number" name="observation" id="observation" placeholder="observation" min="-70" max="60" required>
                     <br />
-                    <input id="btn-submit_obs" type="submit" value="Submit">
-                </form>
+                    <button id="btn-submit_obs" class="btn btn-primary after-div_margin">Submit</button>                    
+                    <!-- <input id="btn-submit_obs" type="submit" value="Submit"> -->
+                <!-- </form> -->
             </div>
         </div>
 
