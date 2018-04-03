@@ -9,9 +9,6 @@ function highsAndLows(arrayOfTemps, idOfTable) {
     var max = maxTemperature(arrayOfTemps);
     var min = minTemperature(arrayOfTemps);
     var table = document.getElementById(idOfTable);
-    // alert(max);
-    // alert(min);
-    // alert(table);
     table.rows[0].cells[1].innerHTML = max;
     table.rows[1].cells[1].innerHTML = min;
 }
@@ -143,33 +140,26 @@ function submitFormData(e) {
         switch (placeInputValue) {
             case "helsinki":
                 recObsOfHelsinki.push(observationInputValue);
-                // alert(recObsOfHelsinki);
                 myChart.data.datasets[0].data[0] = latestTemperature(recObsOfHelsinki);
                 myChart.update();
                 break;
             case "tokyo":
                 recObsOfTokyo.push(observationInputValue);
-                // alert(recObsOfTokyo);
-                // updateShowHighAndLowTemperatures();
-                // updateAllObservations();
                 myChart.data.datasets[0].data[1] = latestTemperature(recObsOfTokyo);
                 myChart.update();
                 break;
             case "dubai":
                 recObsOfDubai.push(observationInputValue);
-                // alert(recObsOfDubai);
                 myChart.data.datasets[0].data[2] = latestTemperature(recObsOfDubai);
                 myChart.update();
                 break;
             case "newyork":
                 recObsOfNewYork.push(observationInputValue);
-                // alert(recObsOfNewYork);
                 myChart.data.datasets[0].data[3] = latestTemperature(recObsOfNewYork);
                 myChart.update();
                 break;
             case "amsterdam":
                 recObsOfAmsterdam.push(observationInputValue);
-                // alert(recObsOfAmsterdam);
                 myChart.data.datasets[0].data[4] = latestTemperature(recObsOfAmsterdam);
                 myChart.update();
                 break;
@@ -186,10 +176,6 @@ function submitFormData(e) {
                 document.getElementById('observation').required = true;
             }
         });
-        // $(".btn-submit_obs").click(function (event){
-        //     $("#observation").addClass('is-invalid');
-        //     $("#observation").prop('required', true);
-        // });
 
         var addObs = document.getElementById("add-obs");
         var displaySetting = addObs.style.display;
